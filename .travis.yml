@@ -1,3 +1,5 @@
 language: python
-script: coverage run -m pytest test.py
+script: 
+        - coverage run -m pytest test.py
+        - coverage run -a make.py
 after_success: codecov
