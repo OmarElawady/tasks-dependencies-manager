@@ -96,6 +96,7 @@ class Make:
         sys.stdout = sys.__stdout__
         return result.getvalue()
 if __name__ == "__main__":
+    print("Normal usage:")
     b = Make()
     b.add_task("publish", ["build-release"], "print publish")
     b.add_task("build-release", ["nim-installed"], "print exec command to build release mode")
@@ -103,3 +104,13 @@ if __name__ == "__main__":
     b.add_task("curl-installed", ["apt-installed"], "apt-get install curl")
     b.add_task("apt-installed", [], "code to install apt...")
     b.run_task("publish")
+
+    print("Cyclic dependencies:")
+    b = Make()
+    b.add_task("publish", ["build-release"], "print publish")
+    b.add_task("build-release", ["nim-installed"], "print exec command to build release mode")
+    b.add_task("nim-installed", ["curl-installed"], "print curl LINK | bash")
+    b.add_task("curl-installed", ["publish", "apt-installed"], "apt-get install curl")
+    b.add_task("apt-installed", [], "code to install apt...")
+    b.run_task("publish")
+    
