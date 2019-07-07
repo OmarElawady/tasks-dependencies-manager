@@ -103,4 +103,3 @@ if __name__ == "__main__":
     b.add_task("curl-installed", ["apt-installed"], "apt-get install curl")
     b.add_task("apt-installed", [], "code to install apt...")
     b.run_task("publish")
-    print(b.print_out_to_string("publish"))
