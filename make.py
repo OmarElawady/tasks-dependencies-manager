@@ -6,6 +6,7 @@ class Task:
         
         Arguments:
             dependecies {list[str]} -- list of tasks names that the task depends on
+            
             command {str} -- the command associated with the task
         """
         self.dependencies = dependencies
