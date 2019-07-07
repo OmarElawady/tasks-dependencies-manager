@@ -1,3 +1,6 @@
+[![codecov](https://codecov.io/gh/OmarElawady/tasks-dependencies-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/OmarElawady/tasks-dependencies-manager)
+[![Build Status](https://travis-ci.com/OmarElawady/tasks-dependencies-manager.svg?branch=master)](https://travis-ci.com/OmarElawady/tasks-dependencies-manager)
+
 Tasks dependencies manager
 ==========================
 
