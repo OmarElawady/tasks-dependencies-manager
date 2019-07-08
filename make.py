@@ -87,14 +87,6 @@ class Make:
             print(current)
             current = self.parent[current]
         print("forms a cycle")
-    def print_out_to_string(self, task):
-        import sys
-        from io import StringIO
-        result = StringIO()
-        sys.stdout = result
-        self.run_task(task)
-        sys.stdout = sys.__stdout__
-        return result.getvalue()
 if __name__ == "__main__":
     print("Normal usage:")
     b = Make()
